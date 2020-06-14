@@ -74,50 +74,21 @@ Content-Type: application/json
 ## Return Types
 
 #### Success Response Payload
-* **Status:** 200 <br />
-  **Body:** `{ code : 0, msg : "success", records: [Data] }`
+| Status | Response |
+| ------ | ----------- |
+| 200 | `{ code : 0, msg : "success", records: [Data] }` |
  
 #### Error Response Payload
-
-  * **Status:** 500 <br />
-    **Content:** `{
-        "code": -1,
-        "msg": "internal server error, error is ; Required params are not provided!",
-        "records": []
-    }`
+| Status | Response |
+| ------ | ----------- |
+| 500 | `{ "code": -1, "msg": "internal server error, error is ; $errorMsg", "records": [] }` |
+| 404 | `{ "code": 1, "msg": "Can not find any record with given parameters!", "records": [] }` |
+| 400 | `{ "code": 2, "msg": "\"endDate\" is required", "records": [] }` |
+| 400 | `{ "code": 3, "msg": "\"maxCount\" must be a number", "records": [] }` |
+| 400 | `{ "code": 4, "msg": "Request body must be in valid JSON format. Error is ;Unexpected token } in JSON at position 103", "records": [] }` |
+| 404 | `{ "code": 5, "msg": "Not Found" }` |
   
-  * **Status:** 404 <br />
-    **Content:** `{
-        "code": 1,
-        "msg": "Can not find any record with given parameters!",
-        "records": []
-    }`
-  * **Status:** 400 <br />
-    **Content:** `{
-        "code": 2,
-        "msg": "\"endDate\" is required",
-        "records": []
-    }`
-    
-  * **Status:** 400 <br />
-    **Content:** `{
-        "code": 3,
-        "msg": "\"maxCount\" must be a number",
-        "records": []
-    }`
-    
-  * **Status:** 400 <br />
-    **Content:** `{
-        "code": 4,
-        "msg": "Request body must be in valid JSON format. Error is ;Unexpected token } in JSON at position 103",
-        "records": []
-    }`  
 
-  * **Status:** 404 <br />
-    **Content:** `{
-        "code": 5,
-        "msg": "Not Found"
-    }`
 
 ## Author
 

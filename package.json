@@ -4,8 +4,8 @@
   "description": "Getir case assessment",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/app.js",
-    "test": "jest  --watchAll --verbose --coverage --runInBand"
+    "start": "node src/app.js",
+    "test": "jest  --watchAll --config=./jest.config.js --coverage --runInBand --forceExit --detectOpenHandles"
   },
   "repository": {
     "type": "git",

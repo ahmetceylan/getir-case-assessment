@@ -1,7 +1,6 @@
 const request = require('supertest');
 require('dotenv').config()
 const application = require('../app');
-const RecordController = require('../api/controllers/RecordController');
 
 describe('getRoutes test cases', () => {
   let requestData;
@@ -99,16 +98,6 @@ describe('getRoutes test cases', () => {
     const res = await getRequests();
     expect(res.status).toBe(400);
     expect(res.body.code).toBe(3);
-  });
-
-  it('invalid maxCount2 parameter test', async () => {
-    let res;
-    try {
-      res = RecordController.getRecords({},{});
-    } catch (error) {
-      expect(res.status).toBe(500);
-      expect(res.body.code).toBe(-1);
-    }
   });
 
 });

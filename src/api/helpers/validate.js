@@ -21,13 +21,12 @@ module.exports = (req, res, next) => {
           case 'any.required':
               code = 2
               break;
+          case 'number.base':
           case 'date.format':
               code = 3
               break;
-          default:
-              break;
       }
-      winston.error(error.message);
+      winston.error(error.message + " code: " + error.type);
 
       // Return error code and message
       res.status(400);

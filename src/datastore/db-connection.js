@@ -12,6 +12,7 @@ module.exports = () => {
     winston.info(`Connected to ${db}...`);
   })
   .catch((err) => {
+    /* istanbul ignore next */
     winston.error(err.message);
   });
 };

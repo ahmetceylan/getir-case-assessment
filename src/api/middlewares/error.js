@@ -1,5 +1,5 @@
 const winston = require('winston');
-
+/* istanbul ignore next */
 module.exports = (err, req, res, next) => {
   //ERROR HANDLING
   /**
